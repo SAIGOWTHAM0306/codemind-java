@@ -3,11 +3,19 @@ public class Main{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int x=sc.nextInt();
-       if(x%4!=0){
-           System.out.println(x/4+1);
-       }
-       else{
-          System.out.println(x/4);
-       }
+        int y=sc.nextInt();
+        int z=sc.nextInt();
+        int a=z,b=0,c=0;
+        if(x<y){
+        while(b<=a){
+            a=a+x;
+            b=b+y;
+            c++;
+        }
+        System.out.print(c);
+        }
+        else{
+            System.out.print(-1);
+        }
     }
 }
