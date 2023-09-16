@@ -1,26 +1,35 @@
-import java.util.Scanner;
+import java.util.*;
 public class Main{
-    static boolean isPrime(int n)
-    {
-        if (n <= 1)
+    public static boolean isPrime(int n) {
+        // 0 and 1 are neither prime nor composite numbers
+        if (n == 0 || n == 1) {
             return false;
-        for (int i = 2; i <= Math.sqrt(n); i++)
-            if (n % i == 0)
+        }
+        // 2 is a prime number
+        if (n == 2) {
+            return true;
+        }
+        // every composite number has a prime factor
+        // less than or equal to its square root.
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
                 return false;
-  
-        return true;
-    }
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int x=sc.nextInt();
-        int y=sc.nextInt();
-        int c=0;
-        for(int i=x;i<=y;i++){
-            if(isPrime(i)==true){
-               // System.out.println(i+" ");
-               c++;
             }
         }
-        System.out.println(c);
+        return true;
+ 
     }
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int c=0;
+		for(int i=n;i<=m;i++){
+		    if(isPrime(i)){
+		        c++;
+		    }
+		}
+		System.out.println(c);
+	}
 }
