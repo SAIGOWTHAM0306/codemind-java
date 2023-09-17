@@ -1,35 +1,36 @@
 import java.util.*;
 public class Main{
+    public static boolean isPalindrome(int n){
+        int k=n,rev=0;
+        while(k!=0){
+            rev=rev*10+k%10;
+            k=k/10;
+        }
+        if(n==rev){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 	public static void main(String args[])
 	{
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		int arr[]=new int[n];
-		int brr[]=new int[n];
-		int avg,c=0;
+	//	int brr[]=new int[n];
+		int sum=0,avg,c=0;
 		for(int i=0;i<n;i++){
-		    int sum=0;
 		    arr[i]=sc.nextInt();
-		    int k=arr[i];
-		    while(k!=0){
-		        int rem=k%10;
-		        sum=sum*10+rem;
-		        k=k/10;
-		    }
-		    if(sum==arr[i]){
+		}
+		for(int i=0;i<n;i++){
+		    if(isPalindrome(arr[i])){
+		        /*System.out.print(arr[i]);
+		        break;*/
 		        c++;
 		    }
-		    //System.out.print(sum+" ");
-		    //sum+=arr[i];
-		    //sum+=arr[i];
-		}
-		/*for(int i=n-1;i>=0;i--){
-		    if(arr[i]%2!=0){
-		        System.out.print(arr[i]);
-		        break;
-		    }
 		    
-		}*/
+		}
 		System.out.println(c);
 	}
 }
