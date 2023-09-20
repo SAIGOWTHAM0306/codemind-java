@@ -5,10 +5,7 @@ public class reverseString {
             String s=sc.nextLine();
             char[] arr=s.toCharArray();
             for(int i=arr.length-1;i>=0;i--){
-                if(arr[i]==(char)32){
-                    continue;
-                }
-                System.out.print(arr[i]+" ");
+                System.out.print(arr[i]);
             }
         }
     }
