@@ -4,23 +4,20 @@ public class Main{
 	{
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
-		int[] arr=new int[n];
+		int arr[]=new int[n];
+		int brr[]=new int[n];
+		int sum=0,avg,c=0;
 		for(int i=0;i<n;i++){
 		    arr[i]=sc.nextInt();
-		}
-		float sum=0;
-// 		for(int i=0;i<n;i++){
-// 		    sum=sum+arr[i];
-// 		}
-        // for(int eachele:arr){
-        //     if(eachele%2!=0){
-        //       sum+=eachele;
-        //     }
-        // }
-        for(int i=0;i<n;i++){
-		    //arr[i]=sc.nextInt();
 		    sum+=arr[i];
 		}
-		System.out.printf("%.2f",sum/n);
+		/*for(int i=n-1;i>=0;i--){
+		    if(arr[i]%2!=0){
+		        System.out.print(arr[i]);
+		        break;
+		    }
+		    
+		}*/
+		System.out.printf("%.2f",(float)sum/n);
 	}
 }
